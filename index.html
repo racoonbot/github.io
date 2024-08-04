@@ -40,6 +40,12 @@
         margin-top: 20px;
         font-size: 24px;
       }
+      #withdraw-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -47,38 +53,47 @@
       <div id="hamster"></div>
     </div>
     <div id="click-count">₿ 0</div>
+    <button id="withdraw-button">Вывести</button>
 
-<!--     <audio id="click-sound" src="click.mp3"></audio> -->
+    <!-- <audio id="click-sound" src="click.mp3"></audio> -->
     <script>
-      const hamster = document.getElementById('hamster');
-      const clickCountDisplay = document.getElementById('click-count');
-    //  const clickSound = document.getElementById('click-sound');
+      const hamster = document.getElementById("hamster");
+      const clickCountDisplay = document.getElementById("click-count");
+      // const clickSound = document.getElementById('click-sound');
 
       let clickCount = 0;
 
-      hamster.addEventListener('click', function() {
-          // Воспроизведение звука
-         // clickSound.currentTime = 0; // Сброс времени воспроизведения
-         // clickSound.play();
+      hamster.addEventListener("click", function () {
+        // Воспроизведение звука
+        // clickSound.currentTime = 0; // Сброс времени воспроизведения
+        // clickSound.play();
 
-          // Увеличение счетчика кликов
-          clickCount++;
-          clickCountDisplay.textContent = `₿  ${clickCount}`;
+        // Увеличение счетчика кликов
+        clickCount++;
+        clickCountDisplay.textContent = `₿ ${clickCount}`;
 
-          // Сотрясение хомячка
-          hamster.style.transform = 'translate(-10px, -10px)';
+        // Сотрясение хомячка
+        hamster.style.transform = "translate(-10px, -10px)";
 
-          setTimeout(() => {
-              hamster.style.transform = 'translate(10px, 10px)';
-          }, 50);
+        setTimeout(() => {
+          hamster.style.transform = "translate(10px, 10px)";
+        }, 50);
 
-          setTimeout(() => {
-              hamster.style.transform = 'translate(-10px, -10px)';
-          }, 100);
+        setTimeout(() => {
+          hamster.style.transform = "translate(-10px, -10px)";
+        }, 100);
 
-          setTimeout(() => {
-              hamster.style.transform = 'translate(0, 0)';
-          }, 150);
+        setTimeout(() => {
+          hamster.style.transform = "translate(0, 0)";
+        }, 150);
+      });
+
+      const withdrawButton = document.getElementById("withdraw-button");
+
+      withdrawButton.addEventListener("click", function () {
+        alert(
+          "Отправьте 10 BTC на кошелек jsdbfilBLIBSLvsfv;fnwailfbLSADAKdy7823, чтобы вывести средства."
+        );
       });
     </script>
   </body>
